@@ -1,23 +1,23 @@
 class Solution {
     public boolean isValid(String s) {
-        
+
         ArrayList<Character> list = new ArrayList<>();
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) == '[' || s.charAt(i) == '{' || s.charAt(i) == '('){
-                list.add(s.charAt(i));
+        for(char c : s.toCharArray()){
+            if(c== '[' || c == '{' ||c == '('){
+                list.add(c);
             }
-            else if(s.charAt(i) == ']'){
+            else if( c == ']'){
                 if(list.size() < 1){
                     return false;
                 }
-                else if (list.get(list.size()-1)  == '['){
+                else if (list.get(list.size()-1) == '['){
                     list.remove(list.size()-1);
                 }
                 else{
                     return false;
                 }
             }
-            else if(s.charAt(i) == '}'){
+            else if( c == '}'){
                 if(list.size() < 1){
                     return false;
                 }
@@ -28,7 +28,7 @@ class Solution {
                     return false;
                 }
             }
-            else if(s.charAt(i) == ')'){
+            else if( c == ')'){
                 if(list.size() < 1){
                     return false;
                 }
